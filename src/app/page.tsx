@@ -1,69 +1,125 @@
-import Image from "next/image";
+import AnnouncementBar from "@/components/sections/AnnouncementBar";
+import Header from "@/components/sections/Header";
+import Hero from "@/components/sections/Hero";
+import Values from "@/components/sections/Values";
+import ShopGrid from "@/components/sections/ShopGrid";
+import Bundle from "@/components/sections/Bundle";
+import Subscription from "@/components/sections/Subscription";
+import Story from "@/components/sections/Story";
+import Reviews from "@/components/sections/Reviews";
+import CafeFaq from "@/components/sections/CafeFaq";
+import Footer from "@/components/sections/Footer";
+import CartToast from "@/components/ui/CartToast";
+
+const storeSchema = {
+  "@context": "https://schema.org",
+  "@type": "CoffeeStore",
+  name: "Ember & Oak Coffee Roasters",
+  description:
+    "Small-batch specialty coffee roasted weekly in Portland, Oregon. Direct trade, scored by a Q Grader, shipped within 48 hours.",
+  url: "https://www.emberandoak.coffee",
+  telephone: "+1-503-555-0188",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "2214 SE Division St",
+    addressLocality: "Portland",
+    addressRegion: "OR",
+    postalCode: "97202",
+    addressCountry: "US",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 45.5048,
+    longitude: -122.6424,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "07:00",
+      closes: "17:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday"],
+      opens: "08:00",
+      closes: "16:00",
+    },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "2100",
+    bestRating: "5",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "When do you roast?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We roast Monday to Thursday and ship within 48 hours of roasting, so your coffee arrives in its best window, usually 4 to 7 days after roast.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does the subscription work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pick a coffee or let us choose, set a cadence of every 1, 2 or 4 weeks, and save 15% on every bag. Pause, skip or cancel anytime from your account.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you ship outside the US?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We currently ship to the US and Canada. Orders over $40 ship free within the US.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Whole bean or ground?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Every bag is available whole bean or ground for espresso, filter, French press or AeroPress. Whole bean stays fresh longest.",
+      },
+    },
+  ],
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(storeSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <AnnouncementBar />
+      <Header />
+      <main>
+        <Hero />
+        <Values />
+        <ShopGrid />
+        <Bundle />
+        <Subscription />
+        <Story />
+        <Reviews />
+        <CafeFaq />
       </main>
-    </div>
+      <Footer />
+      <CartToast />
+    </>
   );
 }
