@@ -11,6 +11,7 @@ type Props = {
   notesText?: string;
   lotText?: string;
   showRing?: boolean;
+  ariaLabel?: string;
 };
 
 type SizeConfig = {
@@ -90,6 +91,7 @@ export default function BagVisual({
   notesText,
   lotText,
   showRing,
+  ariaLabel,
 }: Props) {
   const cfg = sizeConfigs[size];
 
@@ -130,7 +132,10 @@ export default function BagVisual({
   const showRingElement = showRing && ringSize > 0;
 
   return (
-    <div className={className} style={{ ...outerStyle, position: "relative", ...(cfg.position === "absolute" ? { position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)" } : {}) }}>
+    <div
+      className={className}
+      {...(ariaLabel ? { role: "img", "aria-label": ariaLabel } : {})}
+      style={{ ...outerStyle, position: "relative", ...(cfg.position === "absolute" ? { position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)" } : {}) }}>
       {/* Top strip overlay */}
       <div aria-hidden style={topStripStyle} />
 

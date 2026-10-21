@@ -25,7 +25,8 @@ export default function CartToast() {
         boxShadow: "0 8px 32px -8px rgba(43,29,20,.45)",
         transform: toastVisible ? "translateY(0)" : "translateY(120%)",
         opacity: toastVisible ? 1 : 0,
-        transition: "transform .3s, opacity .3s",
+        visibility: toastVisible ? "visible" : "hidden",
+        transition: "transform .3s, opacity .3s, visibility .3s",
         pointerEvents: toastVisible ? "auto" : "none",
         maxWidth: 380,
       }}

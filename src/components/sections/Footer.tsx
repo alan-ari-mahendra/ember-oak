@@ -191,7 +191,7 @@ export default function Footer() {
 
           {/* Social links */}
           <div style={{ display: "flex", gap: 10 }}>
-            <button type="button" className="social-btn" aria-label="Instagram">
+            <a href="#" className="social-btn" aria-label="Instagram">
               <svg
                 width="18"
                 height="18"
@@ -206,8 +206,8 @@ export default function Footer() {
                 <circle cx="12" cy="12" r="5" />
                 <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
               </svg>
-            </button>
-            <button type="button" className="social-btn" aria-label="TikTok">
+            </a>
+            <a href="#" className="social-btn" aria-label="TikTok">
               <svg
                 width="18"
                 height="18"
@@ -220,7 +220,7 @@ export default function Footer() {
               >
                 <path d="M9 12a4 4 0 1 0 4 4V4c1 3 4 4 6 4" />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </div>

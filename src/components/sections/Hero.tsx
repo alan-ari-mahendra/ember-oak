@@ -123,6 +123,7 @@ export default function Hero() {
                 text-align: center;
               }
               .hero-visual {
+                width: 100%;
                 max-width: 520px;
                 margin: 0 auto;
               }
@@ -243,6 +244,7 @@ export default function Hero() {
               bg="#F2E8D5"
               fg="#2B1D14"
               size="hero"
+              ariaLabel="Bag of Ember and Oak Guji Natural coffee"
               showRing
               notesText="Blueberry · Jasmine · Cocoa"
               lotText="Lot 26-041 · 340 g"
