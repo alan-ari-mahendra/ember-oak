@@ -1,4 +1,6 @@
 import Eyebrow from "@/components/ui/Eyebrow";
+import Photo from "@/components/ui/Photo";
+import { photos } from "@/lib/images";
 import { faqItems } from "@/lib/data";
 
 const cafeInfo = [
@@ -106,10 +108,9 @@ export default function CafeFaq() {
             >
               {/* Image */}
               <div className="ph" style={{ aspectRatio: "16 / 9" }}>
-                <img
-                  src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80"
-                  alt="Ember and Oak cafe counter"
-                  loading="lazy"
+                <Photo
+                  photo={photos.cafeCounter}
+                  sizes="(max-width: 1024px) 100vw, 600px"
                 />
               </div>
 

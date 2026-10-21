@@ -7,12 +7,34 @@ import PdpReviews from "@/components/sections/PdpReviews";
 import RelatedProducts from "@/components/sections/RelatedProducts";
 import Footer from "@/components/sections/Footer";
 import CartToast from "@/components/ui/CartToast";
+import { photos } from "@/lib/images";
+import { photoExists } from "@/lib/photo-exists";
+import type { GalleryPhoto } from "@/lib/types";
 import PdpClient from "./PdpClient";
 
+const galleryPhotos: GalleryPhoto[] = [
+  { thumbLabel: "Back", photo: photos.pdpBagBack },
+  { thumbLabel: "Beans", photo: photos.pdpBeans },
+  { thumbLabel: "Cup", photo: photos.pdpCup },
+  { thumbLabel: "Farm", photo: photos.pdpFarm },
+].map((p) => ({ ...p, available: photoExists(p.photo.src) }));
+
+const title = "Guji Natural, Ethiopia | Ember & Oak Coffee Roasters";
+const description =
+  "Ethiopia Guji Natural: blueberry, jasmine and cocoa. Light roast, 88.5 cupping score, roasted to order. Whole bean or ground, 340 g or 1 kg, subscribe and save 15%.";
+
 export const metadata: Metadata = {
-  title: "Guji Natural, Ethiopia | Ember & Oak Coffee Roasters",
-  description:
-    "Ethiopia Guji Natural: blueberry, jasmine and cocoa. Light roast, 88.5 cupping score, roasted to order. Whole bean or ground, 340 g or 1 kg, subscribe and save 15%.",
+  title,
+  description,
+  openGraph: {
+    type: "website",
+    siteName: "Ember & Oak Coffee Roasters",
+    locale: "en_US",
+    url: "/coffee/guji-natural",
+    title,
+    description,
+  },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 const jsonLd = {
@@ -107,7 +129,7 @@ export default function GujiNaturalPage() {
           </div>
 
           {/* PDP hero — client wrapper for shared price state */}
-          <PdpClient />
+          <PdpClient galleryPhotos={galleryPhotos} />
 
           {/* Server-rendered sections */}
           <FarmStory />

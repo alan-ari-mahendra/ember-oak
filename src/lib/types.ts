@@ -93,8 +93,19 @@ export type FarmData = {
   region: string;
   paragraphs: string[];
   meta: { label: string; value: string }[];
-  imageUrl: string;
-  imageAlt: string;
+};
+
+export type Photo = {
+  src: string;
+  alt: string;
+  label: string;
+  prompt: string;
+};
+
+export type GalleryPhoto = {
+  thumbLabel: string;
+  photo: Photo;
+  available: boolean;
 };
 
 export type CoffeeDetail = {

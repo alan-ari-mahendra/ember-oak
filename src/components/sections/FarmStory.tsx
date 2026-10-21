@@ -1,5 +1,7 @@
 import { farmData } from "@/lib/data";
 import Eyebrow from "@/components/ui/Eyebrow";
+import Photo from "@/components/ui/Photo";
+import { photos } from "@/lib/images";
 
 export default function FarmStory() {
   return (
@@ -90,10 +92,9 @@ export default function FarmStory() {
           <div className="inner dark">
             {/* Image */}
             <div className="farm-img ph dk">
-              <img
-                src={farmData.imageUrl}
-                alt={farmData.imageAlt}
-                loading="lazy"
+              <Photo
+                photo={photos.farmDryingBeds}
+                sizes="(max-width: 1024px) 100vw, 610px"
               />
             </div>
 

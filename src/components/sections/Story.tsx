@@ -1,4 +1,6 @@
 import Eyebrow from "@/components/ui/Eyebrow";
+import Photo from "@/components/ui/Photo";
+import { photos } from "@/lib/images";
 
 const stats = [
   { value: "11", label: "Partner farms" },
@@ -70,17 +72,15 @@ export default function Story() {
           {/* Left: visual */}
           <div className="story-visual">
             <div className="story-img-main ph">
-              <img
-                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=80"
-                alt="Roaster checking beans at the drum roaster"
-                loading="lazy"
+              <Photo
+                photo={photos.roasteryDrum}
+                sizes="(max-width: 1024px) 100vw, 600px"
               />
             </div>
             <div className="story-img-overlay ph">
-              <img
-                src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
-                alt="Green coffee beans in a sack"
-                loading="lazy"
+              <Photo
+                photo={photos.greenBeans}
+                sizes="(max-width: 1024px) 40vw, 280px"
               />
             </div>
           </div>

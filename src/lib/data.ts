@@ -429,9 +429,6 @@ export const farmData: FarmData = {
     { label: "Importer", value: "Direct, via Addis" },
     { label: "Arrived Portland", value: "September 2026" },
   ],
-  imageUrl:
-    "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&fit=crop&w=1200&q=80",
-  imageAlt: "Coffee cherries drying on raised beds in Guji",
 };
 
 export const coffeeDetails: CoffeeDetail[] = [

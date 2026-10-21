@@ -4,8 +4,13 @@ import { useState, useCallback } from "react";
 import PdpGallery from "@/components/sections/PdpGallery";
 import PdpInfo from "@/components/sections/PdpInfo";
 import PdpStickyBar from "@/components/sections/PdpStickyBar";
+import type { GalleryPhoto } from "@/lib/types";
 
-export default function PdpClient() {
+type Props = {
+  galleryPhotos: GalleryPhoto[];
+};
+
+export default function PdpClient({ galleryPhotos }: Props) {
   const [price, setPrice] = useState(19 * 0.85); // default: 340g subscribe price
 
   const handlePriceChange = useCallback((newPrice: number) => {
@@ -16,7 +21,7 @@ export default function PdpClient() {
     <>
       <section className="pdp">
         <div className="wrap">
-          <PdpGallery />
+          <PdpGallery photos={galleryPhotos} />
           <PdpInfo onPriceChange={handlePriceChange} />
         </div>
       </section>
