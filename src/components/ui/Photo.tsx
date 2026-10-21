@@ -17,7 +17,7 @@ export default function Photo({ photo, sizes }: Props) {
       alt={photo.alt}
       fill
       sizes={sizes}
-      style={{ objectFit: "cover" }}
+      style={{ objectFit: "cover", objectPosition: photo.position }}
     />
   );
 }

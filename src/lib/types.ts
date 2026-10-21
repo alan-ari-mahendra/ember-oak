@@ -100,6 +100,8 @@ export type Photo = {
   alt: string;
   label: string;
   prompt: string;
+  /** CSS object-position for the crop, e.g. "65% 50%". Defaults to center. */
+  position?: string;
 };
 
 export type GalleryPhoto = {

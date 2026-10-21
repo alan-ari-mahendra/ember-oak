@@ -9,12 +9,14 @@ export const photos = {
     src: "/images/roastery-drum.jpg",
     alt: "Roaster checking beans at the drum roaster",
     label: "Photo: roastery drum",
+    position: "66% 50%",
     prompt: `A roaster in a canvas apron checking a sample of freshly roasted coffee beans beside a vintage cast-iron drum coffee roaster, small industrial roastery with brick wall and wooden shelves, morning light from a side window. ${STYLE}`,
   },
   greenBeans: {
     src: "/images/green-beans.jpg",
     alt: "Green coffee beans spilling from a jute sack",
     label: "Photo: green beans",
+    position: "55% 60%",
     prompt: `Close-up of unroasted green coffee beans spilling from an open jute sack onto a wooden floor, plain unmarked sack, roastery storage room. ${STYLE}`,
   },
   cafeCounter: {
@@ -45,6 +47,7 @@ export const photos = {
     src: "/images/pdp-brewed-cup.jpg",
     alt: "Pour-over cup of Guji Natural coffee next to a glass server",
     label: "Photo: brewed cup",
+    position: "60% 50%",
     prompt: `A cup of pour-over coffee in a handmade cream ceramic cup next to a glass server and a pour-over dripper, light bright brew color, wooden table. ${STYLE}`,
   },
   pdpFarm: {

@@ -161,7 +161,7 @@ export default function PdpGallery({ photos }: Props) {
                   alt={current.photo.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 600px"
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", objectPosition: current.photo.position }}
                 />
               ) : (
                 current.photo.label
@@ -213,7 +213,13 @@ export default function PdpGallery({ photos }: Props) {
               onClick={() => setSelected(i + 1)}
             >
               {p.available ? (
-                <Image src={p.photo.src} alt="" fill sizes="110px" style={{ objectFit: "cover" }} />
+                <Image
+                  src={p.photo.src}
+                  alt=""
+                  fill
+                  sizes="110px"
+                  style={{ objectFit: "cover", objectPosition: p.photo.position }}
+                />
               ) : (
                 p.thumbLabel
               )}
