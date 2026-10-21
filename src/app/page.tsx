@@ -13,7 +13,7 @@ import CartToast from "@/components/ui/CartToast";
 
 const storeSchema = {
   "@context": "https://schema.org",
-  "@type": "CoffeeStore",
+  "@type": "Store",
   name: "Ember & Oak Coffee Roasters",
   description:
     "Small-batch specialty coffee roasted weekly in Portland, Oregon. Direct trade, scored by a Q Grader, shipped within 48 hours.",

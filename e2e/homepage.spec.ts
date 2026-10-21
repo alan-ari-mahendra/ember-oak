@@ -23,7 +23,7 @@ test.describe("Homepage", () => {
 
     const texts = await scripts.allTextContents();
     const schemas = texts.map((t) => JSON.parse(t));
-    expect(schemas.some((s: { "@type": string }) => s["@type"] === "CoffeeStore")).toBe(true);
+    expect(schemas.some((s: { "@type": string }) => s["@type"] === "Store")).toBe(true);
     expect(schemas.some((s: { "@type": string }) => s["@type"] === "FAQPage")).toBe(true);
   });
 
