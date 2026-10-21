@@ -84,11 +84,10 @@ test.describe("Homepage", () => {
     });
 
     test("shows trust row", async ({ page }) => {
-      const hero = page.locator(".hero");
-      await expect(hero.locator("text=4.9")).toBeVisible();
-      await expect(hero.locator("text=2,100+ reviews")).toBeVisible();
-      await expect(hero.locator("text=Free shipping over $40")).toBeVisible();
-      await expect(hero.locator("text=Roasted to order")).toBeVisible();
+      const trust = page.locator(".hero .trust-row");
+      await expect(trust).toContainText("4.9 from 2,100+ reviews");
+      await expect(trust.getByText("Free shipping over $40")).toBeVisible();
+      await expect(trust.getByText("Roasted to order")).toBeVisible();
     });
 
     test("bag visual has aria-label", async ({ page }) => {
@@ -148,15 +147,15 @@ test.describe("Homepage", () => {
       await expect(page.locator("button[aria-label='Cart, 3 items']")).toBeVisible();
       await expect(page.locator("text=Guji Natural added to cart")).toBeVisible();
 
-      await page.waitForTimeout(3000);
-      await expect(page.locator("text=Guji Natural added to cart")).toBeHidden();
+      // toast auto-hides after 2.6s + 0.3s transition
+      await expect(page.locator("text=Guji Natural added to cart")).toBeHidden({ timeout: 5000 });
     });
   });
 
   test.describe("Bundle", () => {
     test("shows bundle pricing", async ({ page }) => {
       const bundle = page.locator("#bundle");
-      await expect(bundle.locator("text=Save 10%")).toBeVisible();
+      await expect(bundle.getByText("Save 10%", { exact: true })).toBeVisible();
     });
   });
 

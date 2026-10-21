@@ -85,8 +85,7 @@ test.describe("Product Page", () => {
   test.describe("Product Info", () => {
     test("shows origin info", async ({ page }) => {
       const info = page.locator(".info");
-      await expect(info.locator("text=Guji Zone")).toBeVisible();
-      await expect(info.locator("text=Natural process")).toBeVisible();
+      await expect(info.getByText("Ethiopia · Guji Zone · Natural process")).toBeVisible();
     });
 
     test("shows rating and review link", async ({ page }) => {
@@ -123,8 +122,10 @@ test.describe("Product Page", () => {
       await label1kg.click();
 
       const info = page.locator(".info");
-      await expect(info.locator("text=$48.00").first()).toBeVisible();
-      await expect(info.locator("text=$40.80")).toBeVisible();
+      const subscribe = info.locator("label.mode-option").filter({ hasText: "Subscribe" });
+      await expect(subscribe).toContainText("$40.80");
+      await expect(subscribe).toContainText("$48.00");
+      await expect(info.locator("button[type='submit'] .pr")).toHaveText("$40.80");
     });
   });
 
@@ -158,7 +159,7 @@ test.describe("Product Page", () => {
       const cadenceGrid = page.locator(".cadence-grid");
       await expect(cadenceGrid).toBeHidden();
 
-      const ctaBtn = page.locator("button[type='submit']");
+      const ctaBtn = page.locator(".info button[type='submit']");
       await expect(ctaBtn).toContainText("$19.00");
     });
 
@@ -192,21 +193,21 @@ test.describe("Product Page", () => {
       await page.locator("label").filter({ hasText: "1 kg" }).click();
       await page.locator("button[aria-label='Increase quantity']").click();
 
-      const ctaBtn = page.locator("button[type='submit']");
+      const ctaBtn = page.locator(".info button[type='submit']");
       await expect(ctaBtn).toContainText("$81.60");
     });
 
     test("340g + one-time + qty 1 = $19.00", async ({ page }) => {
       await page.locator("label.mode-option").filter({ hasText: "One-time purchase" }).click();
 
-      const ctaBtn = page.locator("button[type='submit']");
+      const ctaBtn = page.locator(".info button[type='submit']");
       await expect(ctaBtn).toContainText("$19.00");
     });
   });
 
   test.describe("Add to Cart", () => {
     test("form submit triggers toast", async ({ page }) => {
-      await page.locator("button[type='submit']").click();
+      await page.locator(".info button[type='submit']").click();
 
       await expect(page.locator("button[aria-label='Cart, 3 items']")).toBeVisible();
       await expect(page.locator("text=Guji Natural added to cart")).toBeVisible();
