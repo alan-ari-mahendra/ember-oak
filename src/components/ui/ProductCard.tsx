@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import type { Product } from "@/lib/types";
+import { productHref } from "@/lib/routes";
 import BagVisual from "@/components/ui/BagVisual";
 import RoastScale from "@/components/ui/RoastScale";
 import PlusIcon from "@/components/icons/PlusIcon";
@@ -13,6 +15,7 @@ type Props = {
 
 export default function ProductCard({ product, onAdd }: Props) {
   const price = product.variations[0]?.price ?? 0;
+  const href = productHref(product);
 
   return (
     <article className="pcard" style={cardStyle}>
@@ -45,8 +48,11 @@ export default function ProductCard({ product, onAdd }: Props) {
       )}
 
       {/* Image area */}
-      <div
+      <Link
+        href={href}
+        aria-label={product.name}
         style={{
+          display: "block",
           position: "relative",
           aspectRatio: "1",
           borderRadius: 12,
@@ -62,7 +68,7 @@ export default function ProductCard({ product, onAdd }: Props) {
           size="card"
           notesText={product.notes}
         />
-      </div>
+      </Link>
 
       {/* Meta row */}
       <div
@@ -90,7 +96,7 @@ export default function ProductCard({ product, onAdd }: Props) {
           letterSpacing: "-0.01em",
         }}
       >
-        {product.name}
+        <Link href={href}>{product.name}</Link>
       </h3>
 
       {/* Notes */}

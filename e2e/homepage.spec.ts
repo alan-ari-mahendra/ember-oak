@@ -140,6 +140,14 @@ test.describe("Homepage", () => {
       await expect(hearth).toBeHidden();
     });
 
+    test("product card links to the product page", async ({ page }) => {
+      const card = page.locator("#shop .pcard").filter({ hasText: "Guji Natural" });
+      await card.getByRole("link", { name: "Guji Natural" }).last().click();
+      await expect(page).toHaveURL(/\/coffee\/guji-natural$/);
+      // cacheComponents keeps the previous route mounted but hidden, so match the visible h1
+      await expect(page.locator("h1").filter({ visible: true })).toContainText("Guji");
+    });
+
     test("add to cart increments count and shows toast", async ({ page }) => {
       const addBtn = page.locator("button[aria-label='Add Guji Natural to cart']");
       await addBtn.click();

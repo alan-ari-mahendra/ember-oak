@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
+import { productHref } from "@/lib/routes";
 import CheckIcon from "@/components/icons/CheckIcon";
 
 const benefits = [
@@ -182,7 +183,7 @@ export default function Subscription() {
               ))}
             </ul>
 
-            <Button variant="cream" href="#subscribe">
+            <Button variant="cream" href={productHref()}>
               Build my subscription
             </Button>
           </div>

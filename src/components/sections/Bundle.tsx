@@ -1,5 +1,6 @@
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
+import { productHref } from "@/lib/routes";
 import { bundleBags } from "@/lib/data";
 import BundleAddButton from "./BundleAddButton";
 
@@ -135,7 +136,7 @@ export default function Bundle() {
               ))}
             </div>
 
-            <Button variant="line" href="#bundle">
+            <Button variant="line" href={productHref()}>
               Explore bundles
             </Button>
           </div>
