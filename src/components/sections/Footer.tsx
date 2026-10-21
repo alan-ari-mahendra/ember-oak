@@ -1,6 +1,7 @@
 import { footerColumns, paymentMethods } from "@/lib/data";
 import FlameIcon from "@/components/icons/FlameIcon";
 import NewsletterForm from "./FooterNewsletter";
+import "./Footer.css";
 
 export default function Footer() {
   return (
@@ -11,57 +12,6 @@ export default function Footer() {
         padding: "80px 0 30px",
       }}
     >
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .fgrid {
-              display: grid;
-              grid-template-columns: 1.6fr 1fr 1fr 1fr;
-              gap: 50px;
-              padding-bottom: 50px;
-              border-bottom: 1px solid rgba(255,255,255,.12);
-            }
-            .fbot {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding-top: 28px;
-              flex-wrap: wrap;
-              gap: 20px;
-            }
-            .footer-link {
-              color: rgba(255,255,255,.65);
-              text-decoration: none;
-              font-size: 14.5px;
-              line-height: 2.1;
-              transition: color .2s;
-            }
-            .footer-link:hover { color: var(--color-cream); }
-            .social-btn {
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              border: 1px solid rgba(255,255,255,.2);
-              background: transparent;
-              color: var(--color-cream);
-              display: grid;
-              place-items: center;
-              cursor: pointer;
-              transition: background .2s, border-color .2s;
-            }
-            .social-btn:hover {
-              background: rgba(255,255,255,.1);
-              border-color: rgba(255,255,255,.35);
-            }
-            @media (max-width: 1024px) {
-              .fgrid { grid-template-columns: 1fr 1fr; }
-            }
-            @media (max-width: 720px) {
-              .fgrid { grid-template-columns: 1fr; gap: 34px; }
-            }
-          `,
-        }}
-      />
 
       <div className="wrap">
         {/* Main grid */}
@@ -119,18 +69,18 @@ export default function Footer() {
           {/* Link columns */}
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <h4
+              <h3
                 style={{
                   fontSize: 11,
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
                   fontWeight: 600,
                   marginBottom: 16,
-                  color: "rgba(255,255,255,.45)",
+                  color: "rgba(255,255,255,.62)",
                 }}
               >
                 {col.title}
-              </h4>
+              </h3>
               <ul style={{ listStyle: "none" }}>
                 {col.links.map((link) => (
                   <li key={link.label}>
@@ -160,7 +110,7 @@ export default function Footer() {
           <p
             style={{
               fontSize: 13,
-              color: "rgba(255,255,255,.4)",
+              color: "rgba(255,255,255,.62)",
             }}
           >
             &copy; 2026 Ember &amp; Oak Coffee Roasters. All rights reserved.
@@ -181,7 +131,7 @@ export default function Footer() {
                   letterSpacing: "0.04em",
                   display: "inline-flex",
                   alignItems: "center",
-                  color: "rgba(255,255,255,.55)",
+                  color: "rgba(255,255,255,.62)",
                 }}
               >
                 {m}

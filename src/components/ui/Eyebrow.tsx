@@ -6,7 +6,7 @@ type Props = {
 };
 
 const variantColors: Record<string, { color: string; bar: string }> = {
-  terra: { color: "var(--color-terra)", bar: "var(--color-terra)" },
+  terra: { color: "var(--color-terra-ink)", bar: "var(--color-terra)" },
   mustard: { color: "var(--color-mustard)", bar: "var(--color-mustard)" },
   light: { color: "#FFE2D1", bar: "#FFE2D1" },
 };

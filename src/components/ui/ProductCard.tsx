@@ -7,6 +7,7 @@ import BagVisual from "@/components/ui/BagVisual";
 import RoastScale from "@/components/ui/RoastScale";
 import PlusIcon from "@/components/icons/PlusIcon";
 import { formatPrice } from "@/lib/format";
+import "./ProductCard.css";
 
 type Props = {
   product: Product;
@@ -48,9 +49,12 @@ export default function ProductCard({ product, onAdd }: Props) {
       )}
 
       {/* Image area */}
+      {/* Duplicate of the name link below: keep it out of the tab order and the
+          a11y tree so screen readers hear each product once. */}
       <Link
         href={href}
-        aria-label={product.name}
+        tabIndex={-1}
+        aria-hidden="true"
         style={{
           display: "block",
           position: "relative",
@@ -76,7 +80,7 @@ export default function ProductCard({ product, onAdd }: Props) {
           display: "flex",
           justifyContent: "space-between",
           fontSize: 12,
-          color: "var(--color-muted)",
+          color: "var(--color-muted-ink)",
           marginTop: 14,
           letterSpacing: "0.02em",
         }}
@@ -159,27 +163,6 @@ export default function ProductCard({ product, onAdd }: Props) {
       </div>
 
       {/* Hover styles injected once */}
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .pcard {
-              transition: transform .25s, box-shadow .25s;
-            }
-            .pcard:hover {
-              transform: translateY(-4px);
-              box-shadow: 0 12px 32px -8px rgba(43,29,20,.18);
-            }
-            .pcard:hover button[aria-label] {
-              background: #3D2A1E;
-            }
-            @media (max-width: 720px) {
-              .pcard h3 { font-size: 18px !important; }
-              .pcard p  { font-size: 13px !important; }
-              .pcard .buy-price { font-size: 19px !important; }
-            }
-          `,
-        }}
-      />
     </article>
   );
 }

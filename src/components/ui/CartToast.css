@@ -1,0 +1,8 @@
+@media (max-width: 720px) {
+  div[role="status"] {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    max-width: none !important;
+  }
+}

@@ -7,6 +7,7 @@ import SearchIcon from "@/components/icons/SearchIcon";
 import AccountIcon from "@/components/icons/AccountIcon";
 import CartIcon from "@/components/icons/CartIcon";
 import BurgerIcon from "@/components/icons/BurgerIcon";
+import "./Header.css";
 
 type Props = {
   isProductPage?: boolean;
@@ -18,53 +19,6 @@ export default function Header({ isProductPage }: Props) {
 
   return (
     <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .icon-btn {
-              width: 44px;
-              height: 44px;
-              border-radius: 50%;
-              display: grid;
-              place-items: center;
-              background: transparent;
-              color: var(--color-bean);
-              border: 1px solid transparent;
-              transition: background .2s, border-color .2s;
-              cursor: pointer;
-              position: relative;
-            }
-            .icon-btn:hover {
-              border-color: var(--color-line);
-              background: var(--color-paper);
-            }
-            .cart-count {
-              position: absolute;
-              top: 4px;
-              right: 2px;
-              min-width: 18px;
-              height: 18px;
-              border-radius: 50%;
-              background: var(--color-terra);
-              color: #fff;
-              font-size: 11px;
-              font-weight: 600;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              line-height: 1;
-              padding: 0 4px;
-            }
-            @media (max-width: 720px) {
-              .hdr-links { display: none !important; }
-              .hide-m { display: none !important; }
-              .hdr-burger { display: grid !important; }
-              .hdr-logo { font-size: 20px !important; }
-              .hdr-logo-icon { width: 34px !important; height: 34px !important; }
-            }
-          `,
-        }}
-      />
 
       <header
         style={{
@@ -111,7 +65,7 @@ export default function Header({ isProductPage }: Props) {
                   width: 38,
                   height: 38,
                   borderRadius: "50%",
-                  background: "var(--color-terra)",
+                  background: "var(--color-terra-ink)",
                   flexShrink: 0,
                 }}
               >
@@ -128,7 +82,7 @@ export default function Header({ isProductPage }: Props) {
                     textTransform: "uppercase",
                     fontWeight: 500,
                     fontFamily: "var(--font-body)",
-                    color: "var(--color-muted)",
+                    color: "var(--color-muted-ink)",
                     marginTop: 1,
                   }}
                 >

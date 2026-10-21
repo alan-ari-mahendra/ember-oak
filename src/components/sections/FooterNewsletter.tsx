@@ -41,7 +41,7 @@ export default function NewsletterForm() {
           minHeight: 44,
           padding: "0 20px",
           borderRadius: 999,
-          background: "var(--color-terra)",
+          background: "var(--color-terra-ink)",
           color: "#fff",
           border: "none",
           fontSize: 14,

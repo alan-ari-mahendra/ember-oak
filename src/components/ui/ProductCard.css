@@ -1,0 +1,15 @@
+.pcard {
+  transition: transform .25s, box-shadow .25s;
+}
+.pcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(43,29,20,.18);
+}
+.pcard:hover button[aria-label] {
+  background: #3D2A1E;
+}
+@media (max-width: 720px) {
+  .pcard h3 { font-size: 18px !important; }
+  .pcard p  { font-size: 13px !important; }
+  .pcard .buy-price { font-size: 19px !important; }
+}

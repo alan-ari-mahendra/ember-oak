@@ -1,5 +1,6 @@
 import Eyebrow from "@/components/ui/Eyebrow";
 import { valueCards } from "@/lib/data";
+import "./Values.css";
 
 const iconPaths: Record<string, React.ReactNode> = {
   plant: (
@@ -31,30 +32,6 @@ export default function Values() {
       className="values"
       style={{ paddingTop: 110, paddingBottom: 100 }}
     >
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .val-grid {
-              display: grid;
-              grid-template-columns: 0.9fr 1.1fr;
-              gap: 80px;
-              align-items: center;
-            }
-            .vgrid {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 18px;
-            }
-            @media (max-width: 1024px) {
-              .val-grid { grid-template-columns: 1fr; }
-            }
-            @media (max-width: 720px) {
-              .values { padding-top: 80px !important; padding-bottom: 80px !important; }
-              .vgrid { grid-template-columns: 1fr; }
-            }
-          `,
-        }}
-      />
 
       <div className="wrap">
         <div className="val-grid">
@@ -102,7 +79,7 @@ export default function Values() {
                     height: 48,
                     borderRadius: 12,
                     background: "var(--color-cream-2)",
-                    color: "var(--color-terra)",
+                    color: "var(--color-terra-ink)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",

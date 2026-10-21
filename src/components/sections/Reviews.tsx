@@ -1,6 +1,7 @@
 import { homeReviews } from "@/lib/data";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Stars from "@/components/ui/Stars";
+import "./Reviews.css";
 
 export default function Reviews() {
   return (
@@ -12,24 +13,6 @@ export default function Reviews() {
         background: "var(--color-cream-2)",
       }}
     >
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .rev-grid {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 22px;
-              margin-top: 44px;
-            }
-            @media (max-width: 1024px) {
-              .rev-grid { grid-template-columns: repeat(2, 1fr); }
-            }
-            @media (max-width: 720px) {
-              .rev-grid { grid-template-columns: 1fr; }
-            }
-          `,
-        }}
-      />
 
       <div className="wrap">
         {/* Section header */}
@@ -109,7 +92,7 @@ export default function Reviews() {
                   <div style={{ fontWeight: 600, fontSize: 14 }}>
                     {rev.author}
                   </div>
-                  <div style={{ fontSize: 13, color: "var(--color-muted)" }}>
+                  <div style={{ fontSize: 13, color: "var(--color-muted-ink)" }}>
                     {rev.context}
                   </div>
                 </div>
@@ -119,7 +102,7 @@ export default function Reviews() {
                     style={{
                       fontSize: 12,
                       fontWeight: 600,
-                      color: "var(--color-sage)",
+                      color: "var(--color-sage-ink)",
                       whiteSpace: "nowrap",
                     }}
                   >

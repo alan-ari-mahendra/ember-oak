@@ -11,7 +11,7 @@ export default function RoastScale({ level, label }: Props) {
         gap: 4,
         alignItems: "center",
         fontSize: 12,
-        color: "var(--color-muted)",
+        color: "var(--color-muted-ink)",
       }}
     >
       {Array.from({ length: 4 }, (_, i) => (

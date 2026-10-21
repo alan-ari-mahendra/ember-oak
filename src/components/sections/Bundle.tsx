@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import { productHref } from "@/lib/routes";
 import { bundleBags } from "@/lib/data";
 import BundleAddButton from "./BundleAddButton";
+import "./Bundle.css";
 
 const steps = [
   { num: 1, title: "Pick three bags", desc: "Mix origins, roasts, sizes — your call." },
@@ -17,58 +18,6 @@ export default function Bundle() {
       id="bundle"
       style={{ paddingTop: 110, paddingBottom: 110 }}
     >
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .bundle-grid {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 70px;
-              align-items: center;
-            }
-            .bundle-visual {
-              background: var(--color-bean);
-              border-radius: 28px;
-              padding: 40px;
-              color: var(--color-cream);
-            }
-            .bundle-bags {
-              display: flex;
-              justify-content: center;
-              gap: 14px;
-              align-items: flex-end;
-              margin-bottom: 30px;
-            }
-            .bundle-bag {
-              width: 120px;
-              aspect-ratio: 3 / 4.2;
-              border-radius: 12px 12px 8px 8px;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              gap: 3px;
-              text-align: center;
-              position: relative;
-              overflow: hidden;
-              padding: 8%;
-            }
-            .bundle-bag:nth-child(2) {
-              transform: translateY(-16px) scale(1.08);
-            }
-            .eo-btn-bundle-add {
-              width: 100% !important;
-            }
-            @media (max-width: 1024px) {
-              .bundle-grid { grid-template-columns: 1fr; }
-            }
-            @media (max-width: 720px) {
-              .bundle-visual { padding: 28px 22px; }
-              .bundle-bag { width: 88px !important; }
-            }
-          `,
-        }}
-      />
 
       <div className="wrap">
         <div className="bundle-grid">
@@ -107,7 +56,7 @@ export default function Bundle() {
                       width: 32,
                       height: 32,
                       borderRadius: "50%",
-                      background: "var(--color-terra)",
+                      background: "var(--color-terra-ink)",
                       color: "#fff",
                       display: "flex",
                       alignItems: "center",
@@ -125,7 +74,7 @@ export default function Bundle() {
                       style={{
                         display: "block",
                         fontSize: 14,
-                        color: "var(--color-muted)",
+                        color: "var(--color-muted-ink)",
                         marginTop: 2,
                       }}
                     >
@@ -156,7 +105,7 @@ export default function Bundle() {
                       fontSize: 9,
                       letterSpacing: "0.18em",
                       textTransform: "uppercase",
-                      opacity: 0.7,
+                      opacity: 0.9,
                       fontWeight: 600,
                     }}
                   >
@@ -212,7 +161,7 @@ export default function Bundle() {
                   style={{
                     fontSize: 15,
                     textDecoration: "line-through",
-                    opacity: 0.5,
+                    opacity: 0.65,
                   }}
                 >
                   $57.00

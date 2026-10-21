@@ -13,6 +13,12 @@
   --color-mustard: #D9A531;
   --color-sage: #8FA68A;
 
+  /* Text-safe variants (WCAG AA 4.5:1 on cream, cream-2 and paper). The brand
+     tokens above stay for blobs, rings, icons and large display type. */
+  --color-terra-ink: #A94923;
+  --color-muted-ink: #716458;
+  --color-sage-ink: #5C7357;
+
   --radius-card: 18px;
   --radius-pill: 999px;
 

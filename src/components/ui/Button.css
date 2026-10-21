@@ -1,0 +1,26 @@
+/* Hover states; inline base styles live in Button.tsx, hence !important. */
+.eo-btn-terra:hover {
+  background: #8F3D1C !important;
+  color: #fff !important;
+  border-color: #8F3D1C !important;
+}
+.eo-btn-bean:hover {
+  background: #3D2A1E !important;
+  color: var(--color-cream) !important;
+  border-color: #3D2A1E !important;
+}
+.eo-btn-line:hover {
+  background: var(--color-bean) !important;
+  color: var(--color-cream) !important;
+  border-color: var(--color-bean) !important;
+}
+.eo-btn-line-l:hover {
+  background: var(--color-cream) !important;
+  color: var(--color-bean) !important;
+  border-color: var(--color-cream) !important;
+}
+.eo-btn-cream:hover {
+  background: #fff !important;
+  color: var(--color-bean) !important;
+  border-color: #fff !important;
+}

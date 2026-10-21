@@ -180,7 +180,7 @@ export default function BagVisual({
             fontSize: cfg.originFontSize,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            opacity: 0.7,
+            opacity: 0.95,
             fontWeight: 600,
           }}
         >
@@ -203,7 +203,7 @@ export default function BagVisual({
           <span
             style={{
               fontSize: cfg.notesFontSize,
-              opacity: 0.6,
+              opacity: 0.95,
               fontWeight: 500,
             }}
           >
@@ -217,7 +217,7 @@ export default function BagVisual({
               fontSize: 9,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              opacity: 0.45,
+              opacity: 0.95,
               marginTop: 2,
             }}
           >

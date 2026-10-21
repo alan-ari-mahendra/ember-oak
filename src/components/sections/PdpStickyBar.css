@@ -1,0 +1,48 @@
+.stickybar {
+  display: none;
+}
+@media (max-width: 720px) {
+  .stickybar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-line);
+    padding: 12px 20px;
+    gap: 12px;
+    align-items: center;
+    box-shadow: 0 -10px 30px -20px rgba(43,29,20,.4);
+  }
+}
+.stickybar .sb-price {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+}
+.stickybar .sb-meta {
+  font-size: 12px;
+  color: var(--color-muted-ink);
+}
+.stickybar .sb-btn {
+  flex: 1;
+  min-height: 48px;
+  border-radius: 999px;
+  background: var(--color-terra-ink);
+  color: #fff;
+  border: 2px solid var(--color-terra);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background .2s;
+}
+.stickybar .sb-btn:hover {
+  background: #8F3D1C;
+  border-color: #8F3D1C;
+}

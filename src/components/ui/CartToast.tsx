@@ -2,6 +2,7 @@
 
 import { useCart } from "@/lib/cart-context";
 import CheckIcon from "@/components/icons/CheckIcon";
+import "./CartToast.css";
 
 export default function CartToast() {
   const { toastName, toastVisible } = useCart();
@@ -56,20 +57,6 @@ export default function CartToast() {
         View cart
       </a>
 
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            @media (max-width: 720px) {
-              div[role="status"] {
-                left: 16px !important;
-                right: 16px !important;
-                bottom: 16px !important;
-                max-width: none !important;
-              }
-            }
-          `,
-        }}
-      />
     </div>
   );
 }

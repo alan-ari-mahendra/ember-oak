@@ -11,6 +11,7 @@ import { photos } from "@/lib/images";
 import { photoExists } from "@/lib/photo-exists";
 import type { GalleryPhoto } from "@/lib/types";
 import PdpClient from "./PdpClient";
+import "./page.css";
 
 const galleryPhotos: GalleryPhoto[] = [
   { thumbLabel: "Back", photo: photos.pdpBagBack },
@@ -62,53 +63,6 @@ const jsonLd = {
 export default function GujiNaturalPage() {
   return (
     <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .pdp {
-              padding: 30px 0 90px;
-            }
-            .pdp > .wrap {
-              display: grid;
-              grid-template-columns: 1.05fr 0.95fr;
-              gap: 60px;
-              align-items: start;
-            }
-            .breadcrumb {
-              font-size: 13px;
-              color: var(--color-muted);
-              padding: 18px 0 0;
-            }
-            .breadcrumb a {
-              color: var(--color-muted);
-              text-decoration: none;
-              transition: color .2s;
-            }
-            .breadcrumb a:hover {
-              color: var(--color-bean);
-            }
-            .breadcrumb .sep {
-              margin: 0 8px;
-              opacity: .5;
-            }
-            .breadcrumb .current {
-              color: var(--color-bean);
-              font-weight: 500;
-            }
-            @media (max-width: 1024px) {
-              .pdp > .wrap {
-                grid-template-columns: 1fr;
-                gap: 40px;
-              }
-            }
-            @media (max-width: 720px) {
-              .pdp-page-wrap {
-                padding-bottom: 80px;
-              }
-            }
-          `,
-        }}
-      />
 
       <div className="pdp-page-wrap">
         <AnnouncementBar />

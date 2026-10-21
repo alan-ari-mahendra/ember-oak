@@ -156,7 +156,7 @@ export const products: Product[] = [
     tag: "Decaf",
     tagStyle: "default",
     filterClasses: ["medium", "decaf"],
-    bagBg: "#C8572A",
+    bagBg: "#A94923", // terra-ink: cream label text needs 4.5:1
     bagFg: "#F6F1E7",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
