@@ -13,6 +13,14 @@ test.describe("Product Page", () => {
     await expect(desc).toHaveAttribute("content", /Ethiopia Guji Natural/);
   });
 
+  test("has Open Graph image", async ({ page }) => {
+    const og = page.locator('meta[property="og:image"]');
+    await expect(og).toHaveAttribute("content", /\/coffee\/guji-natural\/opengraph-image/);
+    const res = await page.request.get(new URL((await og.getAttribute("content"))!).pathname);
+    expect(res.status()).toBe(200);
+    expect(res.headers()["content-type"]).toBe("image/png");
+  });
+
   test("has Product JSON-LD schema", async ({ page }) => {
     const scripts = page.locator('script[type="application/ld+json"]');
     const texts = await scripts.allTextContents();
@@ -61,6 +69,16 @@ test.describe("Product Page", () => {
       await thumbs.nth(1).click();
       await expect(thumbs.nth(1)).toHaveAttribute("aria-pressed", "true");
       await expect(thumbs.first()).toHaveAttribute("aria-pressed", "false");
+    });
+
+    test("photo thumbnail replaces the bag in the main slot", async ({ page }) => {
+      const thumbs = page.locator("[role='group'][aria-label='Product images'] button");
+      await expect(page.locator(".gmain .bag-gallery")).toBeVisible();
+      await thumbs.nth(2).click();
+      await expect(page.locator(".gmain .bag-gallery")).toHaveCount(0);
+      await expect(page.locator(".gmain .gphoto")).toBeVisible();
+      await thumbs.first().click();
+      await expect(page.locator(".gmain .bag-gallery")).toBeVisible();
     });
   });
 

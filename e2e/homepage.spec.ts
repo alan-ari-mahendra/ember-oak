@@ -16,6 +16,14 @@ test.describe("Homepage", () => {
     );
   });
 
+  test("has Open Graph image", async ({ page }) => {
+    const og = page.locator('meta[property="og:image"]');
+    await expect(og).toHaveAttribute("content", /\/opengraph-image/);
+    const res = await page.request.get(new URL((await og.getAttribute("content"))!).pathname);
+    expect(res.status()).toBe(200);
+    expect(res.headers()["content-type"]).toBe("image/png");
+  });
+
   test("has Store and FAQPage JSON-LD schemas", async ({ page }) => {
     const scripts = page.locator('script[type="application/ld+json"]');
     const count = await scripts.count();
