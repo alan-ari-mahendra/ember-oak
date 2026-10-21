@@ -33,7 +33,6 @@ export default function NewsletterForm() {
           background: "rgba(255,255,255,.08)",
           color: "var(--color-cream)",
           fontSize: 14,
-          outline: "none",
         }}
       />
       <button

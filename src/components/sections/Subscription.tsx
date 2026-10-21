@@ -99,6 +99,10 @@ export default function Subscription() {
               color: var(--color-bean);
               border-color: var(--color-cream);
             }
+            .cadence-option input:focus-visible + .cadence-label {
+              outline: 3px solid var(--color-mustard);
+              outline-offset: 2px;
+            }
             .cadence-option input:checked + .cadence-label small {
               color: var(--color-bean-2);
             }
