@@ -24,8 +24,8 @@ export type Product = {
   tag: string;
   tagStyle: "new" | "default" | "";
   filterClasses: string[];
-  bagBg: string;
-  bagFg: string;
+  /** Bag shot in public/images, portrait 3:4. */
+  image: string;
   sku?: string;
   lot?: string;
   process?: string;
@@ -77,9 +77,8 @@ export type FooterColumn = {
 };
 
 export type BundleBag = {
-  origin: string;
   name: string;
-  bg: string;
+  image: string;
 };
 
 export type ReviewHistogramBar = {
@@ -99,7 +98,8 @@ export type Photo = {
   src: string;
   alt: string;
   label: string;
-  prompt: string;
+  /** Google Flow prompt the photo was generated from, when there is one. */
+  prompt?: string;
   /** CSS object-position for the crop, e.g. "65% 50%". Defaults to center. */
   position?: string;
 };
@@ -108,6 +108,8 @@ export type GalleryPhoto = {
   thumbLabel: string;
   photo: Photo;
   available: boolean;
+  /** Portrait product shot: show it as a framed card over the blob instead of full-bleed. */
+  framed?: boolean;
 };
 
 export type CoffeeDetail = {

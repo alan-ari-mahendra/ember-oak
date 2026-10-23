@@ -31,6 +31,11 @@ export const photos = {
     label: "Photo: raised drying beds, Guji",
     prompt: `Red and dark purple coffee cherries drying on raised mesh beds at a washing station in the highlands of Guji, Ethiopia, green hills in the background, golden hour. ${STYLE}`,
   },
+  pdpBagFront: {
+    src: "/images/guji-natural.jpg",
+    alt: "Front of the Guji Natural coffee bag",
+    label: "Photo: bag front",
+  },
   pdpBagBack: {
     src: "/images/pdp-bag-back.jpg",
     alt: "Back of the Guji Natural coffee bag on a cream backdrop",

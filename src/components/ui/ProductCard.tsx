@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/lib/types";
 import { productHref } from "@/lib/routes";
-import BagVisual from "@/components/ui/BagVisual";
 import RoastScale from "@/components/ui/RoastScale";
 import PlusIcon from "@/components/icons/PlusIcon";
 import { formatPrice } from "@/lib/format";
@@ -58,19 +58,18 @@ export default function ProductCard({ product, onAdd }: Props) {
         style={{
           display: "block",
           position: "relative",
-          aspectRatio: "1",
+          aspectRatio: "4 / 5",
           borderRadius: 12,
           background: "var(--color-cream-2)",
           overflow: "hidden",
         }}
       >
-        <BagVisual
-          name={product.name}
-          origin={product.origin}
-          bg={product.bagBg}
-          fg={product.bagFg}
-          size="card"
-          notesText={product.notes}
+        <Image
+          src={product.image}
+          alt=""
+          fill
+          sizes="(max-width: 720px) 50vw, (max-width: 1024px) 33vw, 300px"
+          style={{ objectFit: "cover" }}
         />
       </Link>
 

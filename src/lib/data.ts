@@ -48,8 +48,7 @@ export const products: Product[] = [
     tag: "New",
     tagStyle: "new",
     filterClasses: ["light"],
-    bagBg: "#F2E8D5",
-    bagFg: "#2B1D14",
+    image: "/images/guji-natural.jpg",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
   {
@@ -66,8 +65,7 @@ export const products: Product[] = [
     tag: "",
     tagStyle: "",
     filterClasses: ["light"],
-    bagBg: "#E8A58A",
-    bagFg: "#2B1D14",
+    image: "/images/huila-honey.jpg",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
   {
@@ -84,8 +82,7 @@ export const products: Product[] = [
     tag: "Best seller",
     tagStyle: "default",
     filterClasses: ["medium", "blend"],
-    bagBg: "#8FA68A",
-    bagFg: "#2B1D14",
+    image: "/images/hearth-blend.jpg",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
   {
@@ -102,8 +99,7 @@ export const products: Product[] = [
     tag: "",
     tagStyle: "",
     filterClasses: ["light"],
-    bagBg: "#D9A531",
-    bagFg: "#2B1D14",
+    image: "/images/nyeri-aa.jpg",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
   {
@@ -120,8 +116,7 @@ export const products: Product[] = [
     tag: "",
     tagStyle: "",
     filterClasses: ["light"],
-    bagBg: "#C9D6D0",
-    bagFg: "#2B1D14",
+    image: "/images/kochere-washed.jpg",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
   {
@@ -138,8 +133,7 @@ export const products: Product[] = [
     tag: "",
     tagStyle: "",
     filterClasses: ["dark", "blend"],
-    bagBg: "#2B1D14",
-    bagFg: "#F6F1E7",
+    image: "/images/midnight-espresso.jpg",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
   {
@@ -156,8 +150,7 @@ export const products: Product[] = [
     tag: "Decaf",
     tagStyle: "default",
     filterClasses: ["medium", "decaf"],
-    bagBg: "#A94923", // terra-ink: cream label text needs 4.5:1
-    bagFg: "#F6F1E7",
+    image: "/images/narino-decaf.jpg",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
   {
@@ -174,8 +167,7 @@ export const products: Product[] = [
     tag: "",
     tagStyle: "",
     filterClasses: ["medium"],
-    bagBg: "#E3C7A0",
-    bagFg: "#2B1D14",
+    image: "/images/la-esperanza.jpg",
     subscription: { discountPercent: 15, cadenceOptions: [1, 2, 4] },
   },
 ];
@@ -377,9 +369,9 @@ export const tickerItems: string[] = [
 ];
 
 export const bundleBags: BundleBag[] = [
-  { origin: "Ethiopia", name: "Guji Natural", bg: "#F2E8D5" },
-  { origin: "Colombia", name: "Huila Honey", bg: "#E8A58A" },
-  { origin: "Blend", name: "Hearth", bg: "#8FA68A" },
+  { name: "Guji Natural", image: "/images/guji-natural.jpg" },
+  { name: "Huila Honey", image: "/images/huila-honey.jpg" },
+  { name: "Hearth Blend", image: "/images/hearth-blend.jpg" },
 ];
 
 export const footerColumns: FooterColumn[] = [

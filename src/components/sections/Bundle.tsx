@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import { productHref } from "@/lib/routes";
@@ -94,33 +95,15 @@ export default function Bundle() {
           <div className="bundle-visual">
             {/* Bags */}
             <div className="bundle-bags">
-              {bundleBags.map((bag, i) => (
-                <div
-                  key={i}
-                  className="bundle-bag"
-                  style={{ background: bag.bg, color: "#2B1D14" }}
-                >
-                  <span
-                    style={{
-                      fontSize: 9,
-                      letterSpacing: "0.18em",
-                      textTransform: "uppercase",
-                      opacity: 0.9,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {bag.origin}
-                  </span>
-                  <strong
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: 16,
-                      fontWeight: 600,
-                      lineHeight: 1.15,
-                    }}
-                  >
-                    {bag.name}
-                  </strong>
+              {bundleBags.map((bag) => (
+                <div key={bag.name} className="bundle-bag">
+                  <Image
+                    src={bag.image}
+                    alt={`${bag.name} bag`}
+                    fill
+                    sizes="130px"
+                    style={{ objectFit: "cover" }}
+                  />
                 </div>
               ))}
             </div>

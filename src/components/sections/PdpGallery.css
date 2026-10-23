@@ -14,8 +14,8 @@
 }
 .gblob {
   position: absolute;
-  width: 70%;
-  height: 70%;
+  width: 78%;
+  height: 78%;
   background: var(--color-terra-2);
   border-radius: 42% 58% 62% 38% / 50% 40% 60% 50%;
   opacity: .55;
@@ -78,6 +78,15 @@
   text-transform: uppercase;
   color: var(--color-muted-ink);
 }
+.gphoto-framed {
+  inset: auto;
+  width: 54%;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-cream-2);
+  box-shadow: 0 24px 48px -16px rgba(43,29,20,.55);
+}
 .gthumb {
   position: relative;
   overflow: hidden;
@@ -105,9 +114,6 @@
   }
 }
 @media (max-width: 720px) {
-  .gmain .bag-gallery {
-    width: 58% !important;
-  }
   .gscore {
     right: 12px;
     bottom: 12px;

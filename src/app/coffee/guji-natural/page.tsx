@@ -14,6 +14,7 @@ import PdpClient from "./PdpClient";
 import "./page.css";
 
 const galleryPhotos: GalleryPhoto[] = [
+  { thumbLabel: "Front", photo: photos.pdpBagFront, framed: true },
   { thumbLabel: "Back", photo: photos.pdpBagBack },
   { thumbLabel: "Beans", photo: photos.pdpBeans },
   { thumbLabel: "Cup", photo: photos.pdpCup },

@@ -73,12 +73,12 @@ test.describe("Product Page", () => {
 
     test("photo thumbnail replaces the bag in the main slot", async ({ page }) => {
       const thumbs = page.locator("[role='group'][aria-label='Product images'] button");
-      await expect(page.locator(".gmain .bag-gallery")).toBeVisible();
+      const main = page.locator(".gmain .gphoto img");
+      await expect(main).toHaveAttribute("alt", "Front of the Guji Natural coffee bag");
       await thumbs.nth(2).click();
-      await expect(page.locator(".gmain .bag-gallery")).toHaveCount(0);
-      await expect(page.locator(".gmain .gphoto")).toBeVisible();
+      await expect(main).toHaveAttribute("alt", /beans/);
       await thumbs.first().click();
-      await expect(page.locator(".gmain .bag-gallery")).toBeVisible();
+      await expect(main).toHaveAttribute("alt", "Front of the Guji Natural coffee bag");
     });
   });
 

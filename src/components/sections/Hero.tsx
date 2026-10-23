@@ -1,6 +1,6 @@
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import BagVisual from "@/components/ui/BagVisual";
+import Image from "next/image";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 import Ticker from "./Ticker";
 import "./Hero.css";
@@ -106,17 +106,16 @@ export default function Hero() {
             </div>
 
             {/* Bag */}
-            <BagVisual
-              name={"Guji\nNatural"}
-              origin="Ethiopia"
-              bg="#F2E8D5"
-              fg="#2B1D14"
-              size="hero"
-              ariaLabel="Bag of Ember and Oak Guji Natural coffee"
-              showRing
-              notesText="Blueberry · Jasmine · Cocoa"
-              lotText="Lot 26-041 · 340 g"
-            />
+            <div className="hero-bag">
+              <Image
+                src="/images/guji-natural.jpg"
+                alt="Bag of Ember and Oak Guji Natural coffee"
+                fill
+                priority
+                sizes="(max-width: 720px) 62vw, 340px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
 
             {/* Float card A */}
             <div className="hero-float hero-float-a">

@@ -90,8 +90,8 @@ test.describe("Homepage", () => {
       await expect(trust.getByText("Roasted to order")).toBeVisible();
     });
 
-    test("bag visual has aria-label", async ({ page }) => {
-      const bag = page.locator("[aria-label='Bag of Ember and Oak Guji Natural coffee']");
+    test("bag photo has alt text", async ({ page }) => {
+      const bag = page.getByRole("img", { name: "Bag of Ember and Oak Guji Natural coffee" });
       await expect(bag).toBeVisible();
     });
   });
